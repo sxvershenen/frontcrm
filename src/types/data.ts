@@ -1,11 +1,11 @@
-export type EntityId = string
+import type {
+  BackendEntity,
+  EntityId,
+} from "@/core/entities"
 
-export type EntityMeta = {
-  id: EntityId
-  version: number
-  updatedAt: string
-  updatedBy: EntityId | null
-}
+export type { EntityId } from "@/core/entities"
+
+export type EntityMeta = BackendEntity
 
 export type ListQuery = {
   cursor?: string
@@ -19,3 +19,5 @@ export type ListResult<T> = {
   items: readonly T[]
   nextCursor: string | null
 }
+
+export type LegacyEntityReference = EntityId

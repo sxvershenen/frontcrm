@@ -1,17 +1,12 @@
-export const crmRoutes = [
-  { path: "", title: "Обзор" },
-  { path: "leads", title: "Заявки" },
-  { path: "bookings", title: "Бронирования" },
-  { path: "schedule", title: "Расписание ресурсов" },
-  { path: "customers", title: "Клиенты" },
-  { path: "cabins", title: "Домики" },
-  { path: "bath-and-hot-tub", title: "Баня и чан" },
-  { path: "venues", title: "Площадки" },
-  { path: "camping", title: "Палаточный кемпинг" },
-  { path: "programs", title: "Программы" },
-  { path: "events", title: "Мероприятия" },
-  { path: "tasks", title: "Задачи" },
-  { path: "finance", title: "Финансы" },
-  { path: "team", title: "Команда" },
-  { path: "settings", title: "Настройки CRM" }
-] as const
+export {
+  CRM_ROUTE_GROUPS,
+  crmRouteRegistry as crmRoutes,
+  crmRouteRegistry,
+  getCrmRouteByPathname,
+  mobilePrimaryRoutes,
+} from "@/app/route-registry"
+export type {
+  CrmRouteEntry,
+  CrmRouteGroup,
+  CrmRouteId,
+} from "@/app/route-registry"

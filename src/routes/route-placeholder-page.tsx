@@ -1,15 +1,24 @@
+import type { CrmRouteEntry } from "@/app/route-registry"
+
 type RoutePlaceholderPageProps = {
-  title: string
+  route: CrmRouteEntry
 }
 
-export function RoutePlaceholderPage({ title }: RoutePlaceholderPageProps) {
+export function RoutePlaceholderPage({ route }: RoutePlaceholderPageProps) {
   return (
-    <section className="mx-auto flex min-h-svh max-w-5xl items-center px-6 py-16">
-      <div className="space-y-2">
-        <p className="text-sm text-muted-foreground">CRM «Свистоплясово»</p>
-        <h1 className="text-2xl font-semibold tracking-tight">{title}</h1>
-        <p className="max-w-xl text-sm text-muted-foreground">
-          Route-заглушка. Интерфейс раздела будет реализован на следующем этапе.
+    <section
+      aria-labelledby={`${route.id}-placeholder-title`}
+      className="bg-card text-card-foreground min-h-48 rounded-xl border border-dashed p-6 shadow-xs"
+    >
+      <div className="max-w-xl space-y-2">
+        <p className="text-muted-foreground text-xs font-medium uppercase tracking-wide">
+          Route placeholder
+        </p>
+        <h2 className="text-base font-medium" id={`${route.id}-placeholder-title`}>
+          {route.title}
+        </h2>
+        <p className="text-muted-foreground text-sm">
+          {route.description} Feature-интерфейс намеренно не реализован на этапе shell.
         </p>
       </div>
     </section>
